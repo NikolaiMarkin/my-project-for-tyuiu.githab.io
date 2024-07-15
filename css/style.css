@@ -1,0 +1,500 @@
+@import "compass/css3";
+@import "swiper/css";
+
+:root {
+    /* main colors */
+    --black: #000;
+    --dark-green: #6b9080;
+    --green: #a4c3b2;
+    --light-green: #cce3de;
+    --almoste-white: #eaf4f4;
+    --nearly-white: #f6fff8;
+}
+
+
+.progress {
+    width: 100%;
+    height: 50px;
+}
+
+.progress-bar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 10px;
+    width: 0%;
+    background: var(--dark-green);
+}
+
+/* Общие настройки */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+    position: relative;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--dark-green);
+    background-color: var(--nearly-white);
+}
+
+/* Заголовки */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+/* Ссылки */
+a {
+    color: var(--green);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--dark-green);
+    text-decoration: underline;
+}
+
+/* Списки */
+ul,
+ol {
+    list-style-type: none;
+    margin-left: 1rem;
+}
+
+li {
+    list-style-type: none;
+    margin-bottom: 0.5rem;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: var(--almoste-white);
+    background-color: var(--green);
+    border: 1px solid var(--green);
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.btn:hover {
+    color: #fff;
+    background-color: var(--dark-green);
+    border-color: var(--dark-green);
+}
+
+.btn__basic {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 10px 20px;
+    color: #f6fff8;
+    background: #6b9080;
+    border-radius: 25px;
+    border: 2px solid #6b9080;
+}
+
+.btn__basic:hover {
+    background: #f6fff8;
+    color: #6b9080;
+    border: 2px solid #6b9080;
+    transition: all 0.5s ease;
+}
+
+/* Формы */
+input,
+textarea,
+select {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--black);
+    background-color: var(--nearly-white);
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    color: var(--black);
+    background-color: var(--nearly-white);
+    border-color: var(--green);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Другие элементы */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--nearly-white);
+}
+
+th {
+    text-align: left;
+    background-color: var(--nearly-white);
+}
+
+a {
+    color: var(--black);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--black);
+    text-decoration: none;
+}
+
+/* Шапка */
+header {
+    background-color: var(--green);
+    color: var(--almoste-white);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    color: var(--nearly-white);
+}
+
+.logo a {
+    color: var(--almoste-white);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin-left: 20px;
+}
+
+nav a {
+    color: var(--nearly-white);
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: var(--almoste-white);
+}
+
+/* Главная страница */
+.hero {
+    color: var(--dark-green);
+    padding: 30px 20px 30px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--green);
+    color: var(--almoste-white);
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--dark-green);
+}
+
+/* Секции на главной странице */
+
+.wrapp_main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.section {
+    padding: 60px 20px;
+    margin: 60px 20px;
+    color: var(--dark-green);
+    border: 2px solid #6B9080;
+    border-radius: 40px;
+    height: 500px;
+    -webkit-box-shadow: 6px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 6px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    box-shadow: 6px 5px 10px 2px rgba(34, 60, 80, 0.2);
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.section p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.section a {
+    color: var(--green);
+}
+
+.section a:hover {
+    color: var(--dark-green);
+}
+
+/* Страница об авторе */
+.author-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0 40px 0;
+}
+
+.author-info img {
+    width: 150px;
+    height: 150px;
+    border-radius: 30%;
+    margin-right: 30px;
+}
+
+.author-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.author-info p {
+    font-size: 16px;
+    text-align: left;
+}
+
+/* Страница справочника */
+.reference-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    margin: 40px 10px 40px 10px;
+}
+
+.reference-menu a {
+    display: block;
+    background-color: var(--almoste-white);
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-basis: calc(33.33% - 20px);
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s;
+}
+
+.reference-menu a:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Подвал */
+footer {
+    background-color: var(--green);
+    color: var(--almoste-white);
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* ref */
+
+.about__1sec p {
+    text-align: center;
+}
+
+.about__1sec h1 {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.about__1sec__link {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    margin: 30px 0 10px 0;
+}
+
+.ref {
+
+    margin: 40px 10px 40px 10px;
+}
+
+.ref__inner {
+    text-align: center;
+}
+
+.about__ref {
+    text-align: center;
+    margin: 20px 10px 20px 10px;
+}
+
+.ref__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.ref__content__inner {
+    padding: 60px 20px;
+    margin: 60px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+.ref__content__inner__title {
+    padding: 60px 20px;
+    margin: 60px 20px;
+    background-color: var(--almoste-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.ref__content__inner h1 {
+    text-align: center;
+}
+
+.ref__content__inner p {
+    font-size: 20px;
+    text-align-last: left;
+}
+
+.about__con {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.con__inner {
+    text-align: center;
+}
+
+main h1 {
+    text-align: center;
+}
+
+/* Swiper Slider */
+
+.swiper {
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: var(--almoste-white);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wrapp_main_inner {
+    background-color: var(--almoste-white);
+}
+
+.swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet
+{
+    background-color: var(--dark-green);
+}
