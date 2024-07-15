@@ -491,6 +491,7 @@ main h1 {
 
 .wrapp_main_inner {
     background-color: var(--almoste-white);
+    height: 250px;
 }
 
 .swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet,
