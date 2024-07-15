@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <header>
+        <div class="logo"><a href="index.html">C++</a></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О плюсах</a></li>
+                <li><a href="reference.html">Справочник</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="wrapper">
+        
+        <main>
+            <section class="ref">
+                <div class="ref__inner">
+                    <h1>Это наш справочник, который поможет вам узнать вкратце об основах</h1>
+                </div>
+            </section>
+            <div class="reference-menu">
+                <a href="#basic">Основы C++</a>
+                <a href="#oop">Объектно-ориентированное программирование</a>
+                <a href="#temp">Шаблоны</a>
+                <a href="#lib">Стандартная библиотека</a>
+                <a href="#inout">Ввод/Вывод</a>
+                <a href="#exp">Исключения</a>
+            </div>
+            <div class="about__ref">
+                <h2>Справочник по C++</h2>
+                <p>Структурированный справочник с описанием основных концепций и примерами кода.</p>
+            </div>
+            <section class="ref__content">
+
+                <div class="ref__content__inner__title section">
+                    <a name="basic"></a>
+                    <h1>Основы С++</h1>
+                </div>
+                <div class="ref__content__inner">
+                    <p>C++ широко используется в различных областях, включая системное программирование, игровую
+                        индустрию, разработку встраиваемых систем и высокопроизводительных вычислений.</p>
+                </div>
+
+                <div class="ref__content__inner">
+                    <p>Объектно-ориентированное программирование (ООП) является ключевой концепцией в языке C++. Оно
+                        основано на четырех основных принципах:</p>
+
+                    <p>1. Инкапсуляция - связывание данных (атрибутов) и функций (методов) в единый объект, скрывая
+                        внутреннюю реализацию от внешнего мира.</p>
+
+                    <p>2. Наследование - возможность создавать новые классы на основе существующих, наследуя их свойства
+                        и методы.</p>
+
+                    <p>3. Полиморфизм - способность объектов одного класса выполнять одни и те же действия, но при этом
+                        демонстрировать различное поведение.</p>
+
+                    <p>4. Абстракция - выделение общих характеристик и поведения объектов, скрывая несущественные детали
+                        реализации.</p>
+
+                </div>
+                <div class="ref__content__inner__title section">
+                    <a name="oop"></a>
+                    <h1>Объектно-ориентированное программирование</h1>
+                </div>
+
+                <div class="ref__content__inner__title section">
+                    <a name="temp"></a>
+                    <h1>Шаблоны</h1>
+                </div>
+                <div class="ref__content__inner">
+                    <p>Шаблоны (templates) в C++ - это мощный механизм, позволяющий создавать универсальный код, который
+                        может работать с различными типами данных.</p>
+                    <p>Основные возможности шаблонов включают в себя:</p>
+                    <p>Шаблонные функции, классы, специализация шаблонов</p>
+                </div>
+
+                <div class="ref__content__inner">
+                    <p>Стандартная библиотека C++ (Standard Template Library, STL) - это обширная коллекция
+                        предопределенных классов, функций и типов данных, которая является неотъемлемой частью языка
+                        C++. </p>
+                    <p>Она включает в себя следующие ключевые компоненты:</p>
+                    <p>Контейнеры, Алгоритмы, Итераторы</p>
+                </div>
+                <div class="ref__content__inner__title section">
+                    <a name="lib"></a>
+                    <h1>Стандартная библиотека</h1>
+                </div>
+
+                <div class="ref__content__inner__title section">
+                    <a name="inout"></a>
+                    <h1>Ввод/Вывод</h1>
+                </div>
+                <div class="ref__content__inner">
+                    <p><code>std::cout</code> - стандартный поток вывода, используется для вывода информации на консоль.
+                    </p>
+                    <p><code>std::cin</code> - стандартный поток ввода, используется для чтения данных с консоли.</p>
+                </div>
+
+                <div class="ref__content__inner">
+                    <p>В C++ существует механизм исключений (exceptions), который позволяет обрабатывать ошибки и
+                        нештатные ситуации во время выполнения программы. </p>
+                    <p>1. Стандартные исключения:</p>
+                    <p>- <code>std::exception</code> - базовый класс для всех стандартных исключений.</p>
+                    <p>- <code>std::runtime_error</code> - исключение, возникающее во время выполнения программы.</p>
+                    <p>- <code>std::logic_error</code> - исключение, вызванное ошибкой в логике программы.</p>
+                    <p>- <code>std::bad_alloc</code> - ошибка при выделении динамической памяти.</p>
+                    <p>2. Пользовательские исключения:</p>
+                    <p>- Разработчики могут создавать собственные типы исключений, наследуя их от
+                        <code>std::exception</code> или его производных классов.</p>
+                </div>
+                <div class="ref__content__inner__title section">
+                    <a name="exp"></a>
+                    <h1>Исключения</h1>
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer>
+            <p>&copy; 2023 C++ Programming Language</p>
+        </footer>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
