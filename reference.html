@@ -18,11 +18,12 @@
                 <li><a href="index.html">Главная</a></li>
                 <li><a href="about.html">О плюсах</a></li>
                 <li><a href="reference.html">Справочник</a></li>
+                <li><a href="autor_site.html">Обо мне</a></li>
             </ul>
         </nav>
     </header>
     <div class="wrapper">
-        
+
         <main>
             <section class="ref">
                 <div class="ref__inner">
@@ -30,13 +31,44 @@
                 </div>
             </section>
             <div class="reference-menu">
-                <a href="#basic">Основы C++</a>
-                <a href="#oop">Объектно-ориентированное программирование</a>
-                <a href="#temp">Шаблоны</a>
-                <a href="#lib">Стандартная библиотека</a>
-                <a href="#inout">Ввод/Вывод</a>
-                <a href="#exp">Исключения</a>
+                <a href="basic.html">Основы C++</a>
+                <a href="oop.html">Объектно-ориентированное программирование</a>
+                <a href="templ.html">Шаблоны</a>
+                <a href="libr.html">Стандартная библиотека</a>
+                <a href="inout.html">Ввод/Вывод</a>
+                <a href="exp.html">Исключения</a>
             </div>
+
+            <div class="slovar">
+                <h1>Словарь программиста</h1>
+                <table class="iksweb">
+                    <thead>
+                        <tr>
+                            <th>Слова</th>
+                            <th>Значение</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Переменная (Variable)</td>
+                            <td>Именованная область памяти, используемая для хранения данных в программе.</td>
+                        </tr>
+                        <tr>
+                            <td>Функция (Function)</td>
+                            <td>Именованный блок кода, который выполняет определенную задачу и может быть вызван из других частей программы.</td>
+                        </tr>
+                        <tr>
+                            <td>Цикл (Loop)</td>
+                            <td>Конструкция, позволяющая повторять выполнение одного или нескольких операторов до тех пор, пока выполняется определенное условие.</td>
+                        </tr>
+                        <tr>
+                            <td>Условие (Condition)</td>
+                            <td>Логическое выражение, которое оценивается как истинное или ложное и используется для управления потоком выполнения программы.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
             <div class="about__ref">
                 <h2>Справочник по C++</h2>
                 <p>Структурированный справочник с описанием основных концепций и примерами кода.</p>
@@ -117,11 +149,21 @@
                     <p>- <code>std::bad_alloc</code> - ошибка при выделении динамической памяти.</p>
                     <p>2. Пользовательские исключения:</p>
                     <p>- Разработчики могут создавать собственные типы исключений, наследуя их от
-                        <code>std::exception</code> или его производных классов.</p>
+                        <code>std::exception</code> или его производных классов.
+                    </p>
                 </div>
                 <div class="ref__content__inner__title section">
                     <a name="exp"></a>
                     <h1>Исключения</h1>
+                </div>
+
+                <div class="inner_basic">
+                    <input 
+                    action="action"
+                    onclick="window.history.go(-1); return false;"
+                    type="submit"
+                    value="Cancel"
+                    />
                 </div>
 
             </section>
@@ -129,7 +171,7 @@
         </main>
 
         <footer>
-            <p>&copy; 2023 C++ Programming Language</p>
+            <p> <marquee> &copy; 2024 C++ Programming Language</marquee></p>
         </footer>
     </div>
     <script src="js/script.js"></script>
