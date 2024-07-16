@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>C++ Programming Language</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lib/styles/base16/gruvbox-dark-pale.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo"><a href="index.html">C++</a></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О плюсах</a></li>
+                <li><a href="reference.html">Справочник</a></li>
+                <li><a href="autor_site.html">Обо мне</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="wrapper">
+        <main>
+            <section class="section_in">
+                <div class="inner_basic">
+                    <h1>Исключения</h1>
+                    <h2>Обработка исключений</h2>
+                </div>
+
+                <div class="inner_basic">
+                    <p>
+                        <br>
+                        В процессе работы программы могут возникать различные ошибки. Например, при передаче файла по сети оборвется сетевое подключение или будут введены некорректные и недопустимые данные, которые вызовут падение программы. Такие ошибки еще называются исключениями. Исключение представлякт временный объект любого типа, который используется для сигнализации об ошибке. Цель объекта-исключения состоит в том, чтобы передать информацию из точки, в которой произошла ошибка, в код, который должен ее обработать. Если исключение не обработано, то при его возникновении программа прекращает свою работу.
+                    </p>
+                    <p>
+                        <br>
+                        Например, в следующей программе происходит деление чисел:
+                    </p>
+
+                    <pre>
+                        <code class="cpp">
+#include <iostream>
+
+double divide(int a, int b)
+{
+return a / b;
+}
+
+int main()
+{
+int x{500};
+int y{};
+double z {divide(x, y)};
+
+std::cout << z << std::endl;
+std::cout << "The End..." << std::endl;
+}
+                        </code>
+                    </pre>
+
+                    <p>
+                        Эта программа успешно скомпилируется, но при ее выполнении возникнет ошибка, поскольку в коде производится деление на ноль, после чего программа аварийно завершится.
+                    </p>
+
+                    <p>
+                        <br>
+                        С одной стороны, мы можем в функции divide определить проверку и выполнять деление, если параметр b не равен 0. Однако нам в любом случае надо возвращать из функции divide некоторый результат - некоторое число. То есть мы не можем просто написать:
+                    </p>
+
+                    <pre>
+                        <code class="cpp">
+double divide(int a, int b)
+{
+    if (b)
+        return a / b;
+    else
+        std::cout << "Error! b must not be equal to 0" << std::endl;
+}
+                        </code>
+                    </pre>
+                    <p>
+                        И в этом случае нам надо известить систему о возникшей ошибке. Для этого используется оператор <code>throw</code>.
+                    </p>
+
+                    <p>
+                        <br>
+                        Оператор throw генерирует исключение. Через оператор <code>throw</code> можно передать информацию об ошибке. Например, функция <code>divide</code> могла бы выглядеть следующим образом:
+                    </p>
+
+                    <pre>
+                        <code class="cpp">
+double divide(int a, int b)
+{
+if (b)
+return a / b;
+throw "Division by zero!";
+}
+                        </code>
+                    </pre>
+
+
+                    <p>
+                        То есть если параметр b равен 0, то генерируем исключение.
+                    </p>
+
+                    <p>
+                        <br>
+                        Но это исключение еще надо обработать в коде, где будет вызываться функция <code>divide</code>. Для обработки исключений применяется конструкция <code>try...catch</code>. Она имеет следующую форму:
+                    </p>
+
+
+                    <pre>
+                        <code class="cpp">
+try
+{
+инструкции, которые могут вызвать исключение
+}
+catch(объявление_исключения)
+{
+обработка исключения
+}
+                        </code>
+                    </pre>
+
+                    <p>
+                        В блок кода после ключевого слова <code>try</code> помещается код, который потенциально может сгенерировать исключение.
+                    </p>
+
+                    <p>
+                        После ключевого слова <code>catch</code> в скобках идет параметр, который передает информацию об исключении. Затем в блоке производится собственно обработка исключения.
+                    </p>
+
+                    <p>
+                        <br>
+                        Так изменим весь код следующим образом:
+                    </p>
+
+                    <pre>
+                        <code class="cpp">
+#include <iostream>
+
+double divide(int a, int b)
+{
+    if (b)
+        return a / b;
+    throw "Division by zero!";
+}
+    
+int main()
+{
+    int x{500};
+    int y{};
+        
+    try
+    {
+        double z {divide(x, y)};
+        std::cout << z << std::endl;
+    }
+    catch (...)
+    {
+        std::cout << "Error!" << std::endl;
+    }
+    std::cout << "The End..." << std::endl;
+}
+                        </code>
+                    </pre>
+
+                    <p>
+                        Код, который потенциально может сгенерировать исключение - вызов функции <code>divide </code> помещается в блок <code>try</code>.
+                    </p>
+
+                    <p>
+                        <br>
+                        В блоке <code>catch</code> идет обработка исключения. Причем многоточие в скобках после оператора <code>catch (catch(...))</code> позволяет обработать любое исключение.
+                    </p>
+
+                    <p>
+                        В итоге когда выполнение программы дойдет до строки
+                    </p>
+
+                    <pre>
+                        <code class="cpp">
+double z {divide(x, y)};
+                        </code>
+                    </pre>
+
+                </div>
+                
+                <div class="inner_basic">
+                    <input 
+                    action="action"
+                    onclick="window.history.go(-1); return false;"
+                    type="submit"
+                    value="Cancel"
+                    />
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <p> <marquee> &copy; 2024 C++ Programming Language</marquee></p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="lib/highlight.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>C++ Programming Language</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lib/styles/base16/gruvbox-dark-pale.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo"><a href="index.html">C++</a></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О плюсах</a></li>
+                <li><a href="reference.html">Справочник</a></li>
+                <li><a href="autor_site.html">Обо мне</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="wrapper">
+        <main>
+            <section class="section_in">
+                <div class="inner_basic">
+                    <h1>Ввод и вывод в консоли</h1>
+                </div>
+
+                <div class="inner_basic">
+                    <p>
+                        <br>
+                        По умолчанию язык C++ не содержит встроенных средств для ввода с консоли и вывода на консоль,
+                        эти средства предоставляются библиотекой <code>iostream</code>. В ней определены два типа:
+                        <code>istream и ostream</code>.
+                        <code>istream</code> представляет поток ввода, а ostream - поток вывода.
+                    </p>
+                    <p>
+                        <br>
+                        Вообще, сам термин "поток" в данном случае представляет последовательность символов, которая
+                        записывается на устройство ввода-вывода или считывается с него. И в данном случае под
+                        устройством ввода-вывода рассматривается консоль.
+                    </p>
+
+                    <p>
+                        <br>
+                        Для записи или вывода символов на консоль применяется объект <code>cout</code>, который
+                        представляет тип
+                        <code>ostream</code>. А для чтения с консоли используется объект <code>cin</code>
+                    </p>
+
+                    <p>
+                        <br>
+                        Для использования этих объектов в начало исходного файла необходимо подключить библиотеку
+                        <code>iostream</code>:
+                    </p>
+
+                    <pre>
+                        <code class="cpp">
+#include <iostream>
+                        </code>
+                    </pre>
+
+                    <h2>Вывод на консоль</h2>
+
+                    <p>
+                        Для вывода на консоль применяется оператор <code><<</code>. Этот оператор получает два операнда.
+                        Левый
+                        операнд представляет объект типа <code>ostream</code>, в данном случае объект <code>cout</code>.
+                        А правый операнд -
+                        значение, которое надо вывести на консоль. <br>
+                    </p>
+
+                    <p>
+                        <br>
+                        Так как оператор <code><<</code> возвращает левый операнд - <code>cout</code>, то с помощью
+                        цепочки операторов мы можем
+                        передать на консоль несколько значений. Например, определим простейшую программу вывода на
+                        консоль:
+                    </p>
+                    <pre>
+                        <code class="cpp">
+#include <iostream>
+
+int main()
+{   
+int age {33};
+double weight {81.23};
+std::cout << "Name: " << "Tom" << "\n";
+std::cout << "Age: " << age << std::endl;
+std::cout << "Weight: " << weight << std::endl;
+}
+                        </code>
+                        </pre>
+
+                    <p>
+                        Консольный вывод программы:
+                    </p>
+
+                    <pre>
+                        <code class="cpp">
+Name: Tom
+Age: 33
+Weight: 81.23
+                        </code>
+                    </pre>
+                    <p>
+                        Оператору <code><<</code> передаются различные значения - строки, значения переменных, которые
+                        выводятся на консоль.
+                    </p>
+                    <p>
+                        <br>
+                        Строки могут содержать управляющие последовательности, которые интерпретируются определенным
+                        образом. Например, последовательность <code>"\n"</code> интерпретируется как перевод на новую
+                        строку. Из
+                        других управляющих последовательностей также нередко употребляется <code>"\t"</code>, которая
+                        интерпретируется как табуляция.
+                    </p>
+
+                    <p>
+                        <br>
+                        Также цепочку операторов <code><<</code> можно завершать значением <code>std::endl</code>,
+                        которое вызывает перевод на
+                        новую строку и сброс буфера. При выводе в поток данные вначале помещаются в буфер. И сброс
+                        буфера гарантирует, что все переданные для вывода на консоль данные немедленно будут
+                        выведены на консоль.
+                    </p>
+
+                    <h2>Ввод с консоли</h2>
+
+                    <p>
+                        <br>
+                        Для считывания с консоли данных применяется оператор ввода <code>>></code>, который принимает
+                        два операнда.
+                        Левый операнд представляет объект типа <code>istream </code>(в данном случае объект codecin), с
+                        которого
+                        производится считывание, а правый операнд - объект, в который считываются данные.
+                    </p>
+
+                    <p>
+                        <br>
+                        Например, считаем данные с консоли:
+                    </p>
+
+                    <pre>
+                        <code class="cpp">
+#include <iostream>
+
+int main()
+{   
+int age;
+double weight;
+std::cout << "Input age: ";
+std::cin >> age;
+std::cout << "Input weight: ";
+std::cin >> weight;
+std::cout << "Age: " << age << "\t Weight: " << weight << std::endl;
+}
+                        </code>
+                    </pre>
+
+                    <p>
+                        Здесь после приглашений к вводу программа ожидает ввода значений для переменных age и weight.
+                    </p>
+
+                    <p>
+                        <br>
+                        Пример работы программы:
+                    </p>
+
+                    <pre>
+                        <code class="cpp">
+Input age: 32
+Input weight: 67.45
+Age: 32		Weight: 67.45
+                        </code>
+                    </pre>
+
+                    <p>
+                        Стоит отметить, что так как оператор ввода в первом случае будет добавлять данные в
+                        целочисленную переменную <code>age</code>, то он ожидает ввода числа. В случае с переменной <code></code> оператор
+                        ввода ожидает число с плавающей точкой, причем разделителем целой и дробной части должна быть
+                        точка. Поэтому мы не можем ввести любые значения, например, строки. В этом случае программа
+                        может выдать некорректный результат.
+                    </p>
+
+                    <p>
+                        <br>
+                        Оператор ввода <code>>></code> возвращает левый операнд - объект <code>cin</code>, поэтому мы можем по цепочке считывать данные в различные переменные:
+                    </p>
+
+                    <pre>
+                        <code class="cpp">
+#include <iostream>
+
+int main()
+{   
+int age;
+double weight;
+std::cout << "Input age and weight: ";
+std::cin >> age >> weight;
+std::cout << "Age: " << age << "\t Weight: " << weight << std::endl;
+return 0;
+}
+                        </code>
+                    </pre>
+
+                    <p>
+                        Пример работы программы:
+                    </p>
+
+                    <pre>
+                        <code class="cpp">
+Input age and weight: 32 67.45
+Age: 32		Weight: 67.45
+                        </code>
+                    </pre>
+
+                    <p>
+                        После ввода одного из значений надо будет ввести пробел и затем вводить следующее значение.
+                    </p>
+
+                </div>
+
+                <div class="inner_basic">
+                    <input action="action" onclick="window.history.go(-1); return false;" type="submit"
+                        value="Cancel" />
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <p> <marquee> &copy; 2024 C++ Programming Language</marquee></p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="lib/highlight.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+
+</html>
