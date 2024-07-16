@@ -1,6 +1,7 @@
 @import "compass/css3";
 @import "swiper/css";
 
+
 :root {
     /* main colors */
     --black: #000;
@@ -9,8 +10,8 @@
     --light-green: #cce3de;
     --almoste-white: #eaf4f4;
     --nearly-white: #f6fff8;
+    --code-red: #c7254e;
 }
-
 
 .progress {
     width: 100%;
@@ -24,6 +25,8 @@
     height: 10px;
     width: 0%;
     background: var(--dark-green);
+
+    font-family: ope;
 }
 
 /* Общие настройки */
@@ -31,6 +34,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+
+    font-family: "PT Sans";
 }
 
 html {
@@ -155,7 +160,6 @@ input,
 textarea,
 select {
     display: block;
-    width: 100%;
     padding: 0.5rem;
     font-size: 1rem;
     font-family: inherit;
@@ -495,7 +499,145 @@ main h1 {
 }
 
 .swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet,
-.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet
-{
+.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
     background-color: var(--dark-green);
+}
+
+.slovar h1
+{
+    text-align: center;
+}
+
+table.iksweb {
+    text-decoration: none;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+
+table.iksweb th {
+    text-align: center;
+    font-weight: 500;
+    font-size: 17px;
+    color: #ffffff;
+    background-color: #6b9080;
+}
+
+table.iksweb td {
+    font-size: 13px;
+    color: #000;
+}
+
+table.iksweb td,
+table.iksweb th {
+    white-space: pre-wrap;
+    padding: 10px 5px;
+    line-height: 13px;
+    vertical-align: middle;
+    border: 2px solid #6b9080;
+}
+
+table.iksweb tr:hover {
+    background-color: #f9fafb
+}
+
+table.iksweb tr:hover td {
+    color: #6b9080;
+    cursor: default;
+}
+
+.section_in
+{
+    margin: 50px 100px 50px 100px;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+.inner_basic
+{
+    text-align: left;
+    margin: 10px;
+    font-size: 20px;
+}
+
+.inner_basic h1
+{
+    text-align: left;
+}
+
+.inner_basic h2
+{
+    text-align: center;
+}
+
+.inner_basic p code
+{
+    color: var(--code-red);
+    padding: 2px 4px;
+    border-radius: 4px;
+    background-color: #ececf0 !important;
+}
+
+.inner_basic input
+{
+    text-align: center;
+    background-color: var(--dark-green);
+    color: var(--nearly-white);
+}
+.inner_basic input:hover
+{
+    background-color: var(--nearly-white);
+    color: #6B9080;
+    border:  1px solid var(--dark-green);
+    transition-duration: 0.5ms;
+    transform: scale(1.2);
+}
+
+
+
+ul .li_stul
+{
+    list-style:circle ;
+}
+
+.video__basic
+{
+    width: 100%;
+}
+
+.autor
+{
+    margin: 50px 100px 50px 100px;
+}
+
+.img__autor img
+{
+    width: 400px;
+    border-radius: 30%;
+}
+
+.autor__inner
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.autor__list
+{
+    font-size: 30px;
+}
+
+.autor__text
+{
+    font-size: 30px;
+    padding: 20px;
+}
+
+.autor__list li
+{
+    display: flex;
+    align-items: center;
 }
