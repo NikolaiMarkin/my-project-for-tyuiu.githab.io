@@ -466,7 +466,7 @@ main h1 {
 /* Swiper Slider */
 
 .swiper {
-    padding: 20px;
+    margin-bottom: 20px;
     width: 100%;
     height: 100%;
 }
@@ -474,11 +474,14 @@ main h1 {
 .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: var(--almoste-white);
+    background: var(--nearly-white);
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    height: 400px;
+    border-top: 5px solid var(--dark-green);
+    border-bottom: 5px solid var(--dark-green);
 }
 
 .swiper-slide img {
@@ -488,9 +491,9 @@ main h1 {
     object-fit: cover;
 }
 
-.swiper {
-    margin-left: auto;
-    margin-right: auto;
+.swiper-button-prev,.swiper-button-next
+{
+    color: var(--dark-green);
 }
 
 .wrapp_main_inner {
@@ -641,3 +644,4 @@ ul .li_stul
     display: flex;
     align-items: center;
 }
+
